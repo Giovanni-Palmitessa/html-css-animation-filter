@@ -2,42 +2,149 @@
     width: 100px;
     height: 100px;
     border: 1px solid red;
+    transition: 3s;
 }
+
+.ex-1-square:hover{
+    background-color: red;
+}
+
 .ex-2-square {
     width: 100px;
     height: 100px;
     background: red;
+    transition: 3s;
 }
+
+.ex-2-square:active{
+    width: 400px;
+    height: 200px;
+}
+
 .ex-3-square {
     width: 100px;
     height: 100px;
     background: red;
+    transition: 3s;
 }
+
+.ex-3-square:hover{
+    border-radius: 50%;
+}
+
 .ex-4-square {
     width: 100px;
     height: 100px;
     background: red;
+    transition: 3s;
 }
+
+.ex-4-square:hover{
+    opacity: 0;
+}
+
 .ex-5-square {
     margin: 20px;
     width: 60px;
     height: 60px;
     background: red;
+    transition: 3s;
 }
-.ex-6-img, .ex-7-img, .ex-8-img {
+
+.ex-5-square:hover{
+    width: 120px;
+    height: 120px;
+}
+
+.ex-5-square:active{
+    width: 30px;
+    height: 30px;
+}
+
+.ex-6-img {
     width: 500px;
+}
+
+.ex-6-img:hover{
+    filter: grayscale(1);
+}
+
+.ex-7-img{
+    width: 500px;
+    transition: 3s ;
+}
+
+.ex-7-img:hover{
+    filter: grayscale(1) blur(4px);
+}
+
+
+.ex-8-img {
+    width: 500px;
+    transition: 3s;
+}
+
+.ex-8-img:hover{
+    filter: blur(2px) grayscale(1);
+    border-radius: 30px;
 }
 
 .ex-9-img {
     margin: 50px 100px;
     width: 400px;
+    transition: 3s;
 }
+
+.ex-9-img:hover{
+    filter: blur(2px) grayscale(1);
+    border-radius: 50px;
+    width: 800px;
+}
+
 .ex-10-icon {
     font-size: 60px;
+    animation-name: wait;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes wait {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+
+}
+
 .ex-11-icon {
     font-size: 60px;
 }
+
+.ex-11-icon:hover{
+    animation-name: wait-2;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wait-2 {
+    25%{
+        transform: rotate(90deg);
+    }
+
+    50%{
+        transform: rotate(180deg);
+    }
+
+    75%{
+        transform: rotate(270deg);
+    }
+}
+
 .ex-12-button, .ex-13-button {
     position: relative;
     display: block;
@@ -59,6 +166,33 @@
     width: 60px;
     height: 20px;
 }
+
+.ex-12-button:hover .ex-12-top-white{
+    animation-name: button1-top;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+}
+
+@keyframes button1-top{
+   50%{
+    top: -10px;
+    left: calc(100% - 60px);
+   }
+}
+
+.ex-12-button:hover .ex-12-bottom-white{
+    animation-name: button1-bottom;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+}
+
+@keyframes button1-bottom{
+   50%{
+    bottom: -10px;
+    right: calc(100% - 60px);
+   }
+}
+
 .ex-12-bottom-white, .ex-13-bottom-white {
     position: absolute;
     bottom: -10px;
@@ -66,4 +200,71 @@
     background: #f5f5f5;
     width: 60px;
     height: 20px;
+}
+
+.ex-13-button:hover .ex-13-top-white{
+    animation-name: button2-top;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+}
+
+@keyframes button2-top {
+    25%{
+        top: -10px;
+        left: 100%;
+   }
+
+    50%{
+        top: 100%;
+        left: 100%;
+    }
+
+    75%{
+        top: 100%;
+        left: -10px;
+    }
+
+    90%{
+        top: -10px;
+        left: -10%
+    }
+
+    100%{
+        top: -10px;
+        left: 10%;
+    }
+}
+
+.ex-13-button:hover .ex-13-bottom-white{
+    animation-name: button2-bottom;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+}
+
+@keyframes button2-bottom {
+    0% {
+        bottom: -10px;
+        right: 20%;
+    }
+    30% {
+        right: calc(100% - 50px);
+        bottom: -10px;
+    }
+    45% {
+        right: calc(100% - 30px);
+        bottom: 100%;
+    }
+    75% {
+        right: 0;
+        bottom: 100%;
+    }
+    90% {
+        right: -15px;
+        bottom: -10px;
+    }
+    100% {
+        bottom: -10px;
+        right: 20%;
+    }
+
 }
